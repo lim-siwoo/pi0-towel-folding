@@ -1,0 +1,269 @@
+{
+  "run": "20261106-134558",
+  "model_inferred_from_handoff": "pi0_lora_5000",
+  "commands": 2701,
+  "observations": 109,
+  "first_command_s": 1.3975675711408257,
+  "last_command_s": 91.59413857804611,
+  "active_command_span_s": 90.19657100690529,
+  "rate_hz": 29.934619130845814,
+  "step_interval_p99_ms": 52.513330148067325,
+  "step_interval_max_ms": 59.33522689156234,
+  "corrected_arm_commands": 204,
+  "corrected_arm_percent": 7.552758237689744,
+  "max_arm_correction_deg": 5.751302734001292,
+  "correction_intervals_s": [
+    [
+      13.473,
+      14.04
+    ],
+    [
+      14.108,
+      14.14
+    ],
+    [
+      31.915,
+      32.649
+    ],
+    [
+      44.511,
+      44.511
+    ],
+    [
+      44.612,
+      44.612
+    ],
+    [
+      44.745,
+      44.745
+    ],
+    [
+      44.829,
+      44.829
+    ],
+    [
+      44.878,
+      44.878
+    ],
+    [
+      44.948,
+      44.948
+    ],
+    [
+      45.546,
+      46.316
+    ],
+    [
+      47.652,
+      48.287
+    ],
+    [
+      51.962,
+      52.027
+    ],
+    [
+      52.229,
+      52.229
+    ],
+    [
+      57.508,
+      58.31
+    ],
+    [
+      60.848,
+      61.048
+    ],
+    [
+      63.054,
+      63.322
+    ],
+    [
+      63.388,
+      63.554
+    ],
+    [
+      66.461,
+      67.431
+    ],
+    [
+      67.898,
+      68.767
+    ],
+    [
+      70.674,
+      70.674
+    ],
+    [
+      70.771,
+      70.771
+    ],
+    [
+      70.84,
+      70.84
+    ]
+  ],
+  "sides": {
+    "left": {
+      "raw_floor_hits_current_defaults": 43,
+      "raw_floor_max_below_limit_mm": 26.886032729574882,
+      "raw_workspace_hits_current_defaults": 0,
+      "gripper_min_mm": 0.0,
+      "gripper_max_mm": 29.376963153481483,
+      "gripper_final_mm": 17.414305359125137,
+      "gripper_near_closed_intervals_s": [
+        [
+          9.355,
+          10.589
+        ],
+        [
+          14.04,
+          22.15
+        ],
+        [
+          24.891,
+          33.644
+        ]
+      ]
+    },
+    "right": {
+      "raw_floor_hits_current_defaults": 0,
+      "raw_floor_max_below_limit_mm": 0.0,
+      "raw_workspace_hits_current_defaults": 0,
+      "gripper_min_mm": 0.0,
+      "gripper_max_mm": 31.761743128299713,
+      "gripper_final_mm": 14.218799769878387,
+      "gripper_near_closed_intervals_s": [
+        [
+          9.086,
+          15.235
+        ],
+        [
+          18.176,
+          21.215
+        ],
+        [
+          24.825,
+          30.303
+        ],
+        [
+          31.373,
+          33.311
+        ],
+        [
+          41.261,
+          41.396
+        ],
+        [
+          44.102,
+          46.976
+        ],
+        [
+          52.388,
+          54.125
+        ],
+        [
+          62.243,
+          63.054
+        ],
+        [
+          65.518,
+          67.898
+        ],
+        [
+          70.84,
+          71.465
+        ],
+        [
+          75.675,
+          77.311
+        ],
+        [
+          86.298,
+          87.418
+        ]
+      ]
+    }
+  },
+  "video_frames": 541,
+  "video_frame_count_matches_recorder_cadence": true,
+  "sampled_frames": [
+    {
+      "frame": 0,
+      "step_assuming_frame_every_5": 0,
+      "log_time_s": 1.3975675711408257
+    },
+    {
+      "frame": 49,
+      "step_assuming_frame_every_5": 245,
+      "log_time_s": 9.553743811091408
+    },
+    {
+      "frame": 98,
+      "step_assuming_frame_every_5": 490,
+      "log_time_s": 17.741731932153925
+    },
+    {
+      "frame": 147,
+      "step_assuming_frame_every_5": 735,
+      "log_time_s": 25.92760706692934
+    },
+    {
+      "frame": 196,
+      "step_assuming_frame_every_5": 980,
+      "log_time_s": 34.112821374088526
+    },
+    {
+      "frame": 245,
+      "step_assuming_frame_every_5": 1225,
+      "log_time_s": 42.31643061898649
+    },
+    {
+      "frame": 295,
+      "step_assuming_frame_every_5": 1475,
+      "log_time_s": 50.668047179002315
+    },
+    {
+      "frame": 344,
+      "step_assuming_frame_every_5": 1720,
+      "log_time_s": 58.83640382811427
+    },
+    {
+      "frame": 393,
+      "step_assuming_frame_every_5": 1965,
+      "log_time_s": 67.02865920914337
+    },
+    {
+      "frame": 442,
+      "step_assuming_frame_every_5": 2210,
+      "log_time_s": 75.20693455007859
+    },
+    {
+      "frame": 491,
+      "step_assuming_frame_every_5": 2455,
+      "log_time_s": 83.3914011050947
+    },
+    {
+      "frame": 540,
+      "step_assuming_frame_every_5": 2700,
+      "log_time_s": 91.59413857804611
+    }
+  ],
+  "model_identity_source": "Live host process arguments and websocket RTC metadata checked at 13:46 KST; client was connected to port 8000.",
+  "user_feedback": {
+    "success": false,
+    "failure": "한쪽이 모서리를 제대로 못 잡아 수건이 꼬임",
+    "failed_side": "미확인"
+  },
+  "initial_grasp_audit": {
+    "window_s": [
+      7,
+      11
+    ],
+    "commands": 120,
+    "arm_commands_changed": 0,
+    "arm_max_correction_deg": 0.0,
+    "first_arm_correction_s": 13.473,
+    "interpretation": "초기 잡기 구간의 팔 목표는 원래 행동과 동일했다. 이 구간의 팔 궤적이 보호장치 보정 때문에 틀어졌다는 근거는 없다. 실제 잡기 위치와 타이밍의 원인은 추가 비교가 필요하다."
+  },
+  "artifact_limits_source": "summary.json limits (same offline audit function)"
+}

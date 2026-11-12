@@ -1,0 +1,83 @@
+{
+  "source": "lerobot/aloha_static_towel (data/chunk-000/file-000.parquet)",
+  "frames": 25000,
+  "frame": "each ViperX arm base frame, retarget.fk(native=False), metres",
+  "arms": {
+    "left": {
+      "gripper_state_range": [
+        0.007404738571494818,
+        0.6887404918670654
+      ],
+      "gripper_closed_threshold": 0.04836937040090561,
+      "z_percentiles_mm": {
+        "0.5": 249.2,
+        "1": 250.2,
+        "5": 253.4,
+        "25": 262.5,
+        "50": 276.2,
+        "75": 308.8,
+        "95": 335.2
+      },
+      "z_min_per_episode_mm": {
+        "median": 254.0,
+        "p10": 249.6,
+        "p90": 257.9
+      },
+      "z_when_closed_mm": {
+        "5": 252.1,
+        "25": 261.7,
+        "50": 275.1
+      },
+      "x_range_mm": [
+        258,
+        459
+      ],
+      "y_range_mm": [
+        -3,
+        111
+      ],
+      "xy_at_lowest_5pct_mm": [
+        390.0,
+        57.0
+      ]
+    },
+    "right": {
+      "gripper_state_range": [
+        -0.06279659271240234,
+        0.9438133239746094
+      ],
+      "gripper_closed_threshold": -0.046593938022851944,
+      "z_percentiles_mm": {
+        "0.5": 37.2,
+        "1": 39.5,
+        "5": 50.0,
+        "25": 105.7,
+        "50": 181.6,
+        "75": 243.6,
+        "95": 311.5
+      },
+      "z_min_per_episode_mm": {
+        "median": 46.7,
+        "p10": 37.1,
+        "p90": 54.7
+      },
+      "z_when_closed_mm": {
+        "5": 48.0,
+        "25": 84.3,
+        "50": 125.9
+      },
+      "x_range_mm": [
+        147,
+        415
+      ],
+      "y_range_mm": [
+        -314,
+        81
+      ],
+      "xy_at_lowest_5pct_mm": [
+        241.0,
+        -283.0
+      ]
+    }
+  }
+}

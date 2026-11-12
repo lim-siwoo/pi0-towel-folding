@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+wandb/
+runs/
+test_logs/
+backups/
+*.log
+*.npz
+*.npy
+*.mp4
+checkpoints/
+datasets/

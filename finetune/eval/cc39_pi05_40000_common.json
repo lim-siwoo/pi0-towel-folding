@@ -1,0 +1,57 @@
+{
+  "name": "cc39_pi05_40000_common",
+  "checkpoint": "/home/dit/control_center/data/jobs/20261110-185620-659a52/training/checkpoints/040000/pretrained_model",
+  "every_frames": 90,
+  "dataset": "/home/dit/control_center/data/datasets/task-e2b573c17dc9",
+  "val": {
+    "model": {
+      "arm_deg_mean": 5.552043437957764,
+      "grip_mm_mean": 2.8992905616760254,
+      "arm_deg_at_step": {
+        "1": 1.8043910264968872,
+        "10": 3.7794783115386963,
+        "25": 5.870640754699707,
+        "50": 7.90031099319458
+      },
+      "grip_mm_at_step": {
+        "1": 0.8011904358863831,
+        "10": 1.6468321084976196,
+        "25": 3.004885673522949,
+        "50": 4.57729434967041
+      }
+    },
+    "hold": {
+      "arm_deg_mean": 6.0516357421875,
+      "grip_mm_mean": 2.837728500366211,
+      "arm_deg_at_step": {
+        "1": 1.1325461864471436,
+        "10": 3.464510440826416,
+        "25": 6.331449031829834,
+        "50": 9.792391777038574
+      },
+      "grip_mm_at_step": {
+        "1": 0.4538779854774475,
+        "10": 1.354754090309143,
+        "25": 3.1343860626220703,
+        "50": 4.750455856323242
+      }
+    },
+    "arm_direction": {
+      "moves": 83,
+      "same_direction_ratio": 0.5301204819277109,
+      "cos_median": 0.7177913784980774,
+      "move_size_ratio_median": 0.9711499214172363
+    },
+    "gripper_direction": {
+      "events": 30,
+      "same_direction": 25
+    },
+    "samples": 49,
+    "episodes": [
+      0,
+      4
+    ]
+  },
+  "arm_improvement_vs_hold_percent": 8.255491994452846,
+  "seconds": 21.732380390167236
+}

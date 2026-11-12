@@ -1,0 +1,86 @@
+{
+  "ALOHA 2": {
+    "cam_high(overhead_cam)": {
+      "pos_uvz_mm": [
+        0.0,
+        -285.0,
+        1024.0
+      ],
+      "pitch_down_deg": 65.0,
+      "yaw_deg(0=+v)": 0.0,
+      "fovy_deg": 58.0,
+      "table_center_px(640x480)": [
+        320,
+        312
+      ]
+    },
+    "cam_low(worms_eye_cam)": {
+      "pos_uvz_mm": [
+        0.0,
+        -358.0,
+        31.0
+      ],
+      "pitch_down_deg": -5.5,
+      "yaw_deg(0=+v)": 0.0,
+      "fovy_deg": 58.0,
+      "table_center_px(640x480)": [
+        320,
+        319
+      ]
+    },
+    "wrist": {
+      "behind_tip_mm": 121,
+      "side_mm": 0,
+      "above_axis_mm": 86,
+      "view_dir_gripper_frame": [
+        0.91,
+        0.0,
+        -0.42
+      ],
+      "tilt_from_gripper_axis_deg": 25.0,
+      "fovy_deg": 58.0
+    }
+  },
+  "Trossen": {
+    "cam_high": {
+      "pos_uvz_mm": [
+        -9.0,
+        -305.0,
+        1028.0
+      ],
+      "pitch_down_deg": 65.0,
+      "yaw_deg(0=+v)": 0.0,
+      "fovy_deg": 65.0,
+      "table_center_px(640x480)": [
+        323,
+        296
+      ]
+    },
+    "cam_low": {
+      "pos_uvz_mm": [
+        -9.0,
+        -358.0,
+        31.0
+      ],
+      "pitch_down_deg": -5.5,
+      "yaw_deg(0=+v)": 0.0,
+      "fovy_deg": 125.0,
+      "table_center_px(640x480)": [
+        323,
+        263
+      ]
+    },
+    "wrist": {
+      "behind_tip_mm": 97,
+      "side_mm": 9,
+      "above_axis_mm": 55,
+      "view_dir_gripper_frame": [
+        0.94,
+        0.0,
+        -0.34
+      ],
+      "tilt_from_gripper_axis_deg": 20.0,
+      "fovy_deg": 87.0
+    }
+  }
+}

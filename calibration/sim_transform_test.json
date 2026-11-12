@@ -1,0 +1,63 @@
+{
+  "run": "/home/dit/pi0_aloha_towel/trossen_aloha_real/runs/20261104-222916",
+  "rig_aloha_sep_mm": 938.0,
+  "rig_trossen_sep_mm": 915.0,
+  "results": {
+    "보정 없음": {
+      "n": 1202,
+      "mean_err_mm(u,v,z)": [
+        -0.6,
+        4.4,
+        53.4
+      ],
+      "abs_err_p50_mm": 57.9,
+      "abs_err_p95_mm": 62.4,
+      "height_err_p5_p95_mm": [
+        43.1,
+        62.0
+      ]
+    },
+    "zshift (이전 측정 높이 보정)": {
+      "n": 1202,
+      "mean_err_mm(u,v,z)": [
+        -0.6,
+        4.4,
+        6.6
+      ],
+      "abs_err_p50_mm": 21.4,
+      "abs_err_p95_mm": 29.3,
+      "height_err_p5_p95_mm": [
+        -4.0,
+        16.2
+      ]
+    },
+    "fingertip + 시뮬레이션 책상 (수식 검증)": {
+      "n": 1202,
+      "mean_err_mm(u,v,z)": [
+        0.0,
+        0.0,
+        -0.9
+      ],
+      "abs_err_p50_mm": 1.0,
+      "abs_err_p95_mm": 1.0,
+      "height_err_p5_p95_mm": [
+        -1.0,
+        -0.9
+      ]
+    },
+    "fingertip + 실측 책상 (실제 적용)": {
+      "n": 1202,
+      "mean_err_mm(u,v,z)": [
+        0.0,
+        0.0,
+        15.2
+      ],
+      "abs_err_p50_mm": 16.2,
+      "abs_err_p95_mm": 22.3,
+      "height_err_p5_p95_mm": [
+        7.7,
+        22.3
+      ]
+    }
+  }
+}

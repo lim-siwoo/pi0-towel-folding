@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:8765/workspace.html",
+  "task_id": "task-e2b573c17dc9",
+  "name": "수건 접기 새 방식 (2026-11-06)",
+  "instruction": "fold towel",
+  "dataset_root": "/home/dit/control_center/data/datasets/task-e2b573c17dc9",
+  "preferred_collection": "control_center",
+  "recording_started": false
+}

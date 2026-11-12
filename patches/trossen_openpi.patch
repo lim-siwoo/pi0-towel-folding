@@ -1,0 +1,117 @@
+diff --git a/examples/trossen_ai/main.py b/examples/trossen_ai/main.py
+index 02cdc15..973578f 100644
+--- a/examples/trossen_ai/main.py
++++ b/examples/trossen_ai/main.py
+@@ -62,16 +62,16 @@ class TrossenOpenPIBridge:
+             loop_rate=30,
+             cameras={
+                 "cam_high": RealSenseCameraConfig(
+-                    serial_number_or_name="218622270304", width=640, height=480, fps=30, use_depth=False
++                    serial_number_or_name="260522277170", width=640, height=480, fps=30, use_depth=False
+                 ),
+                 "cam_low": RealSenseCameraConfig(
+-                    serial_number_or_name="130322272628", width=640, height=480, fps=30, use_depth=False
++                    serial_number_or_name="260522275305", width=640, height=480, fps=30, use_depth=False
+                 ),
+                 "cam_right_wrist": RealSenseCameraConfig(
+-                    serial_number_or_name="128422271347", width=640, height=480, fps=30, use_depth=False
++                    serial_number_or_name="260522274914", width=640, height=480, fps=30, use_depth=False
+                 ),
+                 "cam_left_wrist": RealSenseCameraConfig(
+-                    serial_number_or_name="218622274938", width=640, height=480, fps=30, use_depth=False
++                    serial_number_or_name="260522277092", width=640, height=480, fps=30, use_depth=False
+                 ),
+             },
+         )
+diff --git a/src/openpi/training/config.py b/src/openpi/training/config.py
+index bd05e29..faa0d4e 100644
+--- a/src/openpi/training/config.py
++++ b/src/openpi/training/config.py
+@@ -766,6 +766,87 @@ _CONFIGS = [
+         # Turn off EMA for LoRA finetuning.
+         ema_decay=None,
+     ),
++    # 관제센터 수건 접기 녹화(156 에피소드) LoRA 파인튜닝.
++    # pi0_trossen_organize_tools(긴 과제, pi0 base, 카메라 4대, LoRA) 의 학습 값을 그대로 쓰고
++    # repo_id, default_prompt, 정규화 값 위치만 바꿨다. 데이터: ~/pi0_aloha_towel/finetune/convert_cc_to_v21.py
++    TrainConfig(
++        name="pi0_trossen_towel_cc",
++        model=pi0_config.Pi0Config(paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"),
++        data=LeRobotAlohaDataConfig(
++            use_delta_joint_actions=False,
++            adapt_to_pi=False,
++            repo_id="local/trossen_towel_cc_train",  # 검증 8개 에피소드 제외 (finetune/split_val.py)
++            # 정규화 값: GitHub 원본은 pi0_base 의 trossen 값(구형 ALOHA 형 Trossen, 델타 행동, 그리퍼 0~1)을 쓰지만
++            # 이 데이터(WidowX AI 절대 관절, 그리퍼 m 단위)와 범위가 맞지 않아 scripts/compute_norm_stats.py 로
++            # 이 데이터에서 계산한 값을 쓴다 (assets/pi0_trossen_towel_cc/local/trossen_towel_cc_train).
++            assets=AssetsConfig(),
++            default_prompt="fold towel",
++            repack_transforms=_transforms.Group(
++                inputs=[
++                    _transforms.RepackTransform(
++                        {
++                            "images": {
++                                "cam_high": "observation.images.cam_high",
++                                "cam_left_wrist": "observation.images.cam_left_wrist",
++                                "cam_right_wrist": "observation.images.cam_right_wrist",
++                                "cam_low": "observation.images.cam_low",
++                            },
++                            "state": "observation.state",
++                            "actions": "action",
++                        }
++                    )
++                ]
++            ),
++        ),
++        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
++        num_train_steps=150_000,
++        batch_size=8,
++        freeze_filter=pi0_config.Pi0Config(
++            paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"
++        ).get_freeze_filter(),
++        # Turn off EMA for LoRA finetuning.
++        ema_decay=None,
++    ),
++    # π0.5 + LoRA (대안, 첫 체크포인트 결과를 보고 결정). GitHub pi05_trossen_organize_tools 의 학습 값
++    # (100,000 스텝, batch 8, 5,000 스텝마다 저장, EMA 끔, pi05_base 가중치)을 쓰되, 모델에 LoRA 를 붙여
++    # 언어 모델·행동 전문가는 LoRA 어댑터만 학습한다 (GitHub 원본은 LoRA 없이 영상 인코더를 직접 학습).
++    # 데이터·프롬프트·정규화 값은 pi0_trossen_towel_cc 와 같다 (정규화는 분위수 기준, 같은 파일의 q01/q99).
++    TrainConfig(
++        name="pi05_trossen_towel_cc_lora",
++        model=pi0_config.Pi0Config(pi05=True, paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"),
++        data=LeRobotAlohaDataConfig(
++            use_delta_joint_actions=False,
++            adapt_to_pi=False,
++            repo_id="local/trossen_towel_cc_train",
++            assets=AssetsConfig(),
++            default_prompt="fold towel",
++            repack_transforms=_transforms.Group(
++                inputs=[
++                    _transforms.RepackTransform(
++                        {
++                            "images": {
++                                "cam_high": "observation.images.cam_high",
++                                "cam_left_wrist": "observation.images.cam_left_wrist",
++                                "cam_right_wrist": "observation.images.cam_right_wrist",
++                                "cam_low": "observation.images.cam_low",
++                            },
++                            "state": "observation.state",
++                            "actions": "action",
++                        }
++                    )
++                ]
++            ),
++        ),
++        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi05_base/params"),
++        num_train_steps=100_000,
++        batch_size=8,
++        freeze_filter=pi0_config.Pi0Config(
++            pi05=True, paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"
++        ).get_freeze_filter(),
++        # Turn off EMA for LoRA finetuning.
++        ema_decay=None,
++        save_interval=5000,
++    ),
+     # This is an example of multitask finetuning on the organize tools task.
+     TrainConfig(
+         name="pi05_trossen_multitask_training",

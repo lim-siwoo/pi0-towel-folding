@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "native": true,
+    "lerobot_pi05": true,
+    "checkpoint": "/home/dit/pi0_aloha_towel/finetune/lerobot_runs/pi05_new31_native_lora/checkpoints/010000/pretrained_model",
+    "task": "fold towel",
+    "dataset_root": "/home/dit/pi0_aloha_towel/datasets/local/towel_new31_pi05_v3",
+    "dataset_repo_id": "local/towel_new31_pi05_v3",
+    "broker": "smooth",
+    "warm_infer_ms": 277.18889666721225
+  },
+  "held_out_episode": 0,
+  "frame": 150,
+  "responses": [
+    {
+      "model_ms": 277.05705910921097,
+      "action_shape": [
+        50,
+        14
+      ],
+      "gripper_range_mm": [
+        22.936155319213867,
+        25.34339141845703
+      ]
+    },
+    {
+      "model_ms": 273.88181211426854,
+      "action_shape": [
+        50,
+        14
+      ],
+      "gripper_range_mm": [
+        17.65703582763672,
+        24.761497497558594
+      ]
+    },
+    {
+      "model_ms": 276.6379751265049,
+      "action_shape": [
+        50,
+        14
+      ],
+      "gripper_range_mm": [
+        23.301942825317383,
+        25.54778289794922
+      ]
+    }
+  ],
+  "robot_connected": false
+}
