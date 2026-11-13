@@ -147,3 +147,8 @@ python finetune/eval_watch.py --kind openpi --exp towel_cc_lora_split --period 5
 - [LeRobot](https://github.com/huggingface/lerobot) — 로봇·카메라 드라이버와 데이터셋 형식.
 - Black et al., "Real-Time Execution of Action Chunking Flow Policies" (2025) — RTC.
 - `calibration/compare_views/`의 비교 그림 일부에는 PI가 공개한 `physical-intelligence/aloha_pen_uncap_diverse` 데이터셋의 장면이 들어 있습니다.
+
+## 라이선스
+
+이 레포에서 직접 작성한 코드와 문서는 [MIT 라이선스](LICENSE)를 따릅니다.
+`patches/trossen_openpi.patch`는 openpi(Apache-2.0)에 대한 수정분이라 원본 코드 일부가 함께 들어 있고, 그 부분은 원본의 라이선스를 따릅니다.
