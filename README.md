@@ -61,7 +61,7 @@
                                                         └→ RTC 정책 서버 → 실제 로봇 클라이언트 → 회차별 점수 기록
 ```
 
-1. **데이터 변환** — [`finetune/convert_cc_to_v21.py`](finetune/convert_cc_to_v21.py)가 LeRobot v3.0 녹화를 openpi가 읽는 v2.1로 바꾸고, [`finetune/split_val.py`](finetune/split_val.py)가 검증용 8개를 떼어 냅니다.
+1. **데이터 변환** — [`finetune/convert_cc_to_v21.py`](finetune/convert_cc_to_v21.py)가 LeRobot v3.0 녹화를 openpi가 읽는 v2.1로 바꾸고, [`finetune/split_val.py`](finetune/split_val.py)가 검증용 8개를 떼어 냅니다. 시연을 더 모은 뒤에는 [`finetune/prepare_data.py`](finetune/prepare_data.py) 한 줄로 새 에피소드만 변환하고, 검증 분리와 정규화 값 계산까지 다시 합니다.
 2. **학습 설정** — [`patches/trossen_openpi.patch`](patches/trossen_openpi.patch)가 Trossen openpi 포크에 `pi0_trossen_towel_cc` 설정을 더합니다. 바꾼 이유는 [`finetune/README.md`](finetune/README.md)에 적었습니다.
 3. **오프라인 검증** — [`finetune/eval_watch.py`](finetune/eval_watch.py)가 새 체크포인트가 저장될 때마다 [`eval_val.py`](finetune/eval_val.py)를 CPU에서 돌려 표·그래프·판정(계속 / 과적합 의심 / 정체)을 갱신합니다.
 4. **정책 서버** — [`trossen_aloha_real/rtc_server.py`](trossen_aloha_real/rtc_server.py)와 [`rtc_model.py`](trossen_aloha_real/rtc_model.py)가 openpi websocket 서버에 RTC(이전 묶음의 남은 동작과 이어지도록 유도하는 샘플링, Black et al. 2025)를 더합니다.
